@@ -3,6 +3,22 @@
 
 void zeroMatrix(int** arr, int n, int m)
 {
+    if (n == 1 ) {
+        if (m == 1) return;
+        bool b = false;
+        for (int j = 0; j < m; ++j) {
+            if (arr[0][j] == 0) {
+                b = true;
+                break;
+            }
+        }
+        if(b) {
+            for (int j = 0; j < m; ++j) {
+                arr[0][j] = 0;
+            }
+        }
+        return;
+    }
     std::vector<int> v;
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
